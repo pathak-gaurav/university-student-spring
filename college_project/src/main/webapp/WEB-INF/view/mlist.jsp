@@ -69,7 +69,7 @@
 						<s:url var="url_edit"  value="/marksheet/edit_marksheet">
 							<s:param name="mid" value="${c.studentId}"/>
 						</s:url>
-						<td> <a href="${url_edit}">Edit</a> | <a href="${url_del}">Delete</a> </td>
+						<td><a href="${url_del}">Delete</a> </td>
 						</tr>
 					</c:forEach>
 				</table>
