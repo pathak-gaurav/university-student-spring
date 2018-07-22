@@ -37,12 +37,30 @@ public class StudentController {
 		return "student_form";
 	}
 
+	
+	/**
+	 * Below method is deprecated
+	 * 
+	 * 
+	 * */
 	@RequestMapping(value = "/student/save_student")
-	public String saveContact(@ModelAttribute("command") Student s, Model m, BindingResult result) {
+	public String saveContacts(@ModelAttribute("command") Student s, Model m, BindingResult result) {
 		if (result.hasErrors()) {
 			return "student-form";
 		} else {
 			studentService.saveStudent(s);
+			return "redirect:slist?act=act";
+		}
+	}
+	
+	@RequestMapping(value = "/student/save_student")
+	public String saveContact(@ModelAttribute("command") Student s, Model m, BindingResult result) {
+		Integer studentId = s.getStudentId();
+		if(studentId==null) {
+			studentService.saveStudent(s);
+			return "redirect:slist?act=act";
+		}else {
+			studentService.update(s);
 			return "redirect:slist?act=act";
 		}
 	}

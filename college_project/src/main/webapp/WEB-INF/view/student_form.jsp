@@ -33,7 +33,7 @@
 					<p class="error">${err}</p>
 				</c:if> <s:url var="url_ssave" value="/student/save_student"></s:url> <f:form
 					action="${url_ssave}" modelAttribute="command">
-					<form:hidden path="studentId" />
+					<f:hidden path="studentId" />
 					<table border="1">
 						<tr>
 							<td>First Name</td>
