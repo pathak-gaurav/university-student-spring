@@ -1,4 +1,4 @@
-# college_project_spring_mvc
+# university-student-spring
 This is the college management project made in Spring MVC
 
 **Technology** : 
